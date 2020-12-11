@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar {
+  background-color: antiquewhite;
+  width: 20%;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar__list {
+  list-style: none;
+  margin: 24px 8px;
+  padding: 0;
+}
+
+.navbar__list a {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar__list-element {
+  margin: 16px 0;
+}
+
+.navbar__list-element > a {
+  color: brown;
+}
+
+.navbar__list-element.-selected > a {
+  color: navy;
+}
+
+.form {
+  background-color: antiquewhite;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.form__input {
+  width: 100%;
+  height: 24px;
+}
+
+.form__label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form__error {
+  font-size: 14px;
+  color: red;
+  margin: 4px 0;
+}
+
+.form__button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.spendings-list {
+  list-style: none;
+  border-bottom: 2px solid antiquewhite;
+  display: flex;
+}
+
+.spendings-list a {
+  text-decoration: none;
+}
+
+.spendings-list__elements {
+  margin: 8px 4px;
+}
+
+.spending-details__table {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.spending-details__cell {
+  border: 2px solid antiquewhite;
+  padding: 4px 8px;
+}
+
+.spending-details__button {
+  border: 1px solid black;
+  background-color: antiquewhite;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.spending-details__edit-button {
+  border: none;
+  background-color: antiquewhite;
+  width: 100%;
+  height: 100%;
 }
