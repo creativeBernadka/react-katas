@@ -1,9 +1,9 @@
+import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getAllSpendingsByDate } from "../store/spendingsSlice";
 import TableRow from "./TableRow";
 import SpendingsForm from "./SpendingsForm";
-import { useState, useEffect } from "react";
 
 const SpendingDetails = () => {
   const [showForm, setShowForm] = useState(false);
@@ -40,6 +40,7 @@ const SpendingDetails = () => {
               subcategory={subcategory}
               showEditForm={showEditForm}
               id={id}
+              key={id}
             />
           ))}
         </tbody>

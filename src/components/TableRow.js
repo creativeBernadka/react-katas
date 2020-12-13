@@ -1,3 +1,5 @@
+import React from "react";
+
 const TableRow = ({ value, category, subcategory, id, showEditForm }) => {
   return (
     <tr>

@@ -6,7 +6,7 @@ import {
   getCurrentNumberOfSpendings,
   getSpendingById,
 } from "../store/spendingsSlice";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 const SpendingsForm = ({ id }) => {
   const dispatch = useDispatch();
@@ -92,7 +92,7 @@ const SpendingsForm = ({ id }) => {
             render={(arrayHelpers) => (
               <div>
                 {values.spendingValues.map((value, index) => (
-                  <Fragment>
+                  <Fragment key={index}>
                     <label
                       htmlFor={`spendingValues.${index}`}
                       className="form__label"

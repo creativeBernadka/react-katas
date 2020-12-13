@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const routes = [
@@ -23,6 +23,8 @@ const Navbar = () => {
             className={`navbar__list-element ${
               index === selectedLinkIndex && "-selected"
             }`}
+            key={to}
+            id={text}
             onClick={() => setSelectedLinkIndex(index)}
           >
             <Link to={to}>{text}</Link>
