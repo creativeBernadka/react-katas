@@ -7,8 +7,9 @@ import {
   getSpendingById,
 } from "../store/spendingsSlice";
 import React, { Fragment } from "react";
+import withSizes from "../hocs/withSizes";
 
-const SpendingsForm = ({ id }) => {
+const SpendingsForm = ({ id, isMobile }) => {
   const dispatch = useDispatch();
   const currentNumberOfSpendings = useSelector(getCurrentNumberOfSpendings);
   const initialValues = useSelector(getSpendingById(id)) || {
@@ -41,6 +42,7 @@ const SpendingsForm = ({ id }) => {
         handleSubmit,
       }) => (
         <form onSubmit={handleSubmit} className="form">
+          {!isMobile && <h1>FILL THE FORM</h1>}
           <label htmlFor="date" className="form__label">
             Date
           </label>
@@ -137,4 +139,4 @@ const SpendingsForm = ({ id }) => {
   );
 };
 
-export default SpendingsForm;
+export default withSizes(SpendingsForm);
