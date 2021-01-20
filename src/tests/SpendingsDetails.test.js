@@ -1,6 +1,6 @@
 //testy na methods passed to child components
 import React from "react";
-import { shallow, mount, render } from "enzyme";
+import { mount } from "enzyme";
 import SpendingDetails from "../components/SpendingsDetails";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
@@ -17,13 +17,8 @@ jest.mock("react", () => ({
 }));
 
 describe("<SpendingDetails />", () => {
-  let store;
   const middlewares = [];
   const mockStore = configureStore(middlewares);
-
-  beforeEach(() => {
-    store = mockStore({});
-  });
 
   it("shows edit form on row click", () => {
     const initialState = {

@@ -1,6 +1,5 @@
 import React from "react";
-import { shallow, mount, render } from "enzyme";
-// import { expect, to, find } from "jest";
+import { shallow } from "enzyme";
 import Navbar from "../components/Navbar";
 
 describe("<Navbar />", () => {

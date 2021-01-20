@@ -1,5 +1,3 @@
-import React from "react";
-import { shallow, mount, render } from "enzyme";
 import TableRow from "../components/TableRow";
 
 const defaultProps = {
@@ -25,19 +23,9 @@ describe("<TableRow />", () => {
   });
 
   it("calls useEffect on isMobile change", () => {
-    const spy = jest.spyOn(React, "useEffect").mockImplementation((f) => f());
-    // const wrapper = shallow(
-    //   <table>
-    //     <tbody>
-    //       <TableRow {...defaultProps} />
-    //     </tbody>
-    //   </table>
-    // );
-    const wrapper = render(<TableRow {...defaultProps} />);
-    wrapper.setProps({ isMobile: true });
+    const wrapper = setup({ isMobile: true });
+    expect(wrapper.find(".spending-details__edit-button")).toHaveLength(0);
     wrapper.setProps({ isMobile: false });
-    expect(spy).toBeCalled();
-    spy.mockClear();
-    spy.mockRestore();
+    expect(wrapper.find(".spending-details__edit-button")).toHaveLength(1);
   });
 });
